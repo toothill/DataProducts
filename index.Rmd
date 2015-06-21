@@ -1,0 +1,75 @@
+---
+title       : Data Products Project
+subtitle    : Analyzing "mtcars" Data
+author      : Rick Toothill
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Introduction - Developing Data Project
+
+<h1>This project is required to demonstrate the following skills:</h1>
+
+<ul>
+  <li>Generation of a "data product"
+  <li>Working with Shiny</li>
+  <li>Working with Slidify</li>
+</ul>
+
+<h1>App: Analyze "mtcars" Data</h1>
+
+<p>This application allows the user to easily analyze/visualize the factors influencing gas mileage in the "mtcars" data.  The user can choose among:
+
+<ul>
+  <li>Different car makes</li>
+  <li>Various factors (independent variables)</li>
+  <li>Even pick the color of points on the plot!</li>
+</ul>
+
+
+--- 
+
+## How Does the App Work?
+
+<h1>Inputs to the App are as follows:</h1>
+
+<ul>
+  <li>Select a specific make or All</li>
+  <li>Select the independent variables</li>
+  <li>Select the color of the points on the plot</li>
+</ul>
+
+<h1>Outputs of the App are as follows:</h1>
+
+<ul>
+  <li>Repeat of the make selected (or All)</li>
+  <li>Calculatation of the average gas mileage for the make (or All)</li>
+  <li>Plot showing relationship between MPG & factor selected</li>
+  <B>NOTE:</B>  Point related to make selected are red triangles!
+</ul>
+
+
+---
+
+## A Design Challenge ...
+<h1>Selecting the mtcars subet based on make was a challenge</h1>
+<BR>
+<p>This design challenge was overcome using the following grep statement to extract the correct make based on the row name:</p>
+
+
+```{r}
+mtcars[grep("Merc*",rownames(mtcars)), ]
+```
+
+---
+
+## Conclusion
+
+<h3>This type of application makes it very easy to analyze mtcars data</h3>
+<BR><BR>
+<h3>Have Fun!!!!</h3>

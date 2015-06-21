@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Products Project</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Data Products Project">
+  <meta name="author" content="Rick Toothill">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Data Products Project</h1>
+    <h2>Analyzing &quot;mtcars&quot; Data</h2>
+    <p>Rick Toothill<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction - Developing Data Project</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1>This project is required to demonstrate the following skills:</h1>
+
+<ul>
+  <li>Generation of a "data product"
+  <li>Working with Shiny</li>
+  <li>Working with Slidify</li>
+</ul>
+
+<h1>App: Analyze "mtcars" Data</h1>
+
+<p><p>This application allows the user to easily analyze/visualize the factors influencing gas mileage in the &quot;mtcars&quot; data.  The user can choose among:</p>
+
+<ul>
+  <li>Different car makes</li>
+  <li>Various factors (independent variables)</li>
+  <li>Even pick the color of points on the plot!</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>How Does the App Work?</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1>Inputs to the App are as follows:</h1>
+
+<ul>
+  <li>Select a specific make or All</li>
+  <li>Select the independent variables</li>
+  <li>Select the color of the points on the plot</li>
+</ul>
+
+<h1>Outputs of the App are as follows:</h1>
+
+<ul>
+  <li>Repeat of the make selected (or All)</li>
+  <li>Calculatation of the average gas mileage for the make (or All)</li>
+  <li>Plot showing relationship between MPG & factor selected</li>
+  <B>NOTE:</B>  Point related to make selected are red triangles!
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>A Design Challenge ...</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1>Selecting the mtcars subet based on make was a challenge</h1>
+
+<p><BR></p>
+
+<p>This design challenge was overcome using the following grep statement to extract the correct make based on the row name:</p>
+
+<pre><code class="r">mtcars[grep(&quot;Merc*&quot;,rownames(mtcars)), ]
+</code></pre>
+
+<pre><code>##              mpg cyl  disp  hp drat   wt qsec vs am gear carb
+## Merc 240D   24.4   4 146.7  62 3.69 3.19 20.0  1  0    4    2
+## Merc 230    22.8   4 140.8  95 3.92 3.15 22.9  1  0    4    2
+## Merc 280    19.2   6 167.6 123 3.92 3.44 18.3  1  0    4    4
+## Merc 280C   17.8   6 167.6 123 3.92 3.44 18.9  1  0    4    4
+## Merc 450SE  16.4   8 275.8 180 3.07 4.07 17.4  0  0    3    3
+## Merc 450SL  17.3   8 275.8 180 3.07 3.73 17.6  0  0    3    3
+## Merc 450SLC 15.2   8 275.8 180 3.07 3.78 18.0  0  0    3    3
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>This type of application makes it very easy to analyze mtcars data</h3>
+
+<p><BR><BR></p>
+
+<h3>Have Fun!!!!</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction - Developing Data Project'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='How Does the App Work?'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='A Design Challenge ...'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Conclusion'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
